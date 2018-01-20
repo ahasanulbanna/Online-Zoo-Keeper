@@ -6,14 +6,14 @@ namespace ZooApp.Models.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+    public sealed partial class _1stCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_1stCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710161840489_InitialCreate"; }
+            get { return "201712070931253_1stCreate"; }
         }
         
         string IMigrationMetadata.Source

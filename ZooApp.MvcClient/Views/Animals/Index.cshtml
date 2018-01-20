@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ZooApp.ViewModels.ViewAnimal>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<div class="row">
+<div class="col-md-offset-1">
+    <h2 style="text-align:center;color:green; background-color:silver;">Animal List</h2>
+
+    <p>
+        @Html.ActionLink("Add Animal", "Create", null, new { @class = "btn btn-warning glyphicon glyphicon-plus-sign" })
+    </p>
+    <table class="table table-bordered" style="text-align:center;">
+
+        <tr style="background-color:#9fda98;font-size:25px;">
+            <td>
+                Name
+            </td>
+            <td>
+                Origin
+            </td>
+            <td>
+                Quantity
+            </td>
+            <td>Action</td>
+        </tr>
+
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default glyphicon glyphicon-edit" })
+                    @Html.ActionLink("Delete", "Delete", new { Id = item.Id, GroceryId = item.Id }, new { @onclick = "return confirm('Are you sure you want to delete this Animal');", @class = "btn btn-info btn-lg glyphicon glyphicon-trash" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+</div>
+

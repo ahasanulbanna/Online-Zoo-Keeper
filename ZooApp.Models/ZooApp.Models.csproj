@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -48,21 +48,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
-    <Compile Include="Migrations\201710161840489_InitialCreate.cs" />
-    <Compile Include="Migrations\201710161840489_InitialCreate.Designer.cs">
-      <DependentUpon>201710161840489_InitialCreate.cs</DependentUpon>
+    <Compile Include="AnimalFood.cs" />
+    <Compile Include="Food.cs" />
+    <Compile Include="Migrations\201712070931253_1stCreate.cs" />
+    <Compile Include="Migrations\201712070931253_1stCreate.Designer.cs">
+      <DependentUpon>201712070931253_1stCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="ZooContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710161840489_InitialCreate.resx">
-      <DependentUpon>201710161840489_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712070931253_1stCreate.resx">
+      <DependentUpon>201712070931253_1stCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

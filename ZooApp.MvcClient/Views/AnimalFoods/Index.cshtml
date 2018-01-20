@@ -1,0 +1,98 @@
+﻿@model IEnumerable<ZooApp.ViewModels.ViewFoodTotal>
+
+@{
+    ViewBag.Title = "Index";
+}
+  
+  
+    <script>
+        function printContent(e1) {
+            var originalContent = document.body.innerHTML;
+            var print = document.getElementById(e1).innerHTML;
+            document.body.innerHTML = print;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+    </script>
+
+@{
+    var fromDate = (DateTime)ViewBag.fromDate;
+}
+
+ 
+    <div class="row">
+        <div class="col-md-offset-1">
+            <h2 style="text-align:center;color:green; background-color:silver;">Bazar List</h2>
+
+            <p>
+                @Html.ActionLink("Add Animal Food", "Create", null, new { @class = "btn btn-warning glyphicon glyphicon-plus-sign" })
+                
+            </p>
+            <div id="Print">
+               <p>
+                   Date: @Html.TextBox("fromDate", string.Format("{0:dd MMM yyy}", fromDate), new { @class = "datefield", type = "date" })
+               </p>
+                
+                <table class="table table-bordered" style="text-align:center;">
+                    <tr style="background-color:#9fda98;;font-size:25px;">
+                        <td>
+                            Food Name
+                        </td>
+                        <td>
+                            Food Price(Taka)
+                        </td>
+                        <td>
+                            Total Quantity(Kg)
+                        </td>
+                        <td>
+                            Total Price(Taka)
+                        </td>
+
+                    </tr>
+
+           @foreach (var item in Model)
+            {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FoodName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FoodPrice)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalQuantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalPrice)
+                            </td>
+                            
+
+                        </tr>
+              }
+
+                    <tr>
+                        <td>
+                            <h3>Total Price</h3>
+                        </td>
+                        <td>_____</td>
+                        <td>_____</td>
+                        <td>
+                            <h3>@ViewBag.Total</h3>
+                        </td>
+                    </tr>
+
+
+                </table>
+            </div>
+            
+            <button onclick="printContent('Print')" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-print"></span> Print</button>
+
+        </div>
+    </div>
+   
+
+
+
+
+ 
+
